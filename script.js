@@ -1,6 +1,8 @@
+//DOM
 var generateBtn = document.querySelector("#generate");
-var password = document.querySelector("#password");
+var passwordText = document.querySelector("#password");
 
+//arrays
 var arraySpecial = ["!", "$", "%", "^", "&", "*", "(", ")", "-", "=", "+", "[", "]", "{", "}", ";", "#", ":", "@", "~", ",", ".", "/", "<", ">", "?"];
 var arrayNumber = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var arrayLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -11,12 +13,20 @@ generateBtn.addEventListener("click", function () {
   var confirmSpecial = confirm("Click OK to confirm including special characters.");
   var confirmLower = confirm("Click ok to confirm including lowercase characters.");
   var confirmUpper = confirm("Click ok to confirm including uppercase characters.");
+
   passwordLength = parseInt(passwordLength);
 
+  passwordText.innerText = generatePassword(passwordLength, confirmSpecial, confirmLower, confirmUpper)
 });
 
-console.log(password);
+function generatePassword(passwordLength, confirmSpecial, confirmUpper, confirmLower) {
+  var randomPassword = "";
 
+  var userConfirms = confirmSpecial + confirmUpper + confirmLower;
+  console.log("userConfirms", userConfirms);
+  confirmsArray = [confirmSpecial, confirmUpper, confirmLower];
+  console.log("confirmsArray", confirmsArray);
+}
 function getRandomSpecial() {
   return arraySpecial[Math.floor(Math.random() * arraySpecial.length)];
 }
@@ -40,4 +50,3 @@ function getRandomUpper() {
 }
 
 console.log(getRandomUpper());
-
