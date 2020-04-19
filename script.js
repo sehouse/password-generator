@@ -22,6 +22,7 @@ var passwordLength;
 var confirmSpecial;
 var confirmLower;
 var confirmUpper;
+var confirmNumber;
 
 
 function createPassword() {
@@ -30,13 +31,19 @@ function createPassword() {
 
   passwordLength = prompt("How many characters would you like your password to contain? (Password must contain at least 8 characters and no more than 128 characters.)");
 
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Your password must contain between 8 and 128 characters. Please try again.")
+    passwordLength = prompt("How many characters would you like your password to contain? (Password must contain at least 8 characters and no more than 128 characters.)");
+  }
   passwordLength = parseInt(passwordLength);
 
-  confirmSpecial = confirm("Click OK to confirm including special characters.");
+  confirmSpecial = confirm("Click OK to confirm including special characters in your password.");
 
-  confirmLower = confirm("Click ok to confirm including lowercase characters.");
+  confirmLower = confirm("Click ok to confirm including lowercase letters in your password.");
 
-  confirmUpper = confirm("Click ok to confirm including uppercase characters.");
+  confirmUpper = confirm("Click ok to confirm including uppercase letters in your password.");
+
+  confirmNumber = confirm("Click ok to confirm including numbers in your password.")
 
   var passwordItems = []
 
@@ -51,7 +58,11 @@ function createPassword() {
   }
 
   if (confirmUpper === true) {
-    passwordItems = passwordItems.concat(arrayUpper)
+    passwordItems = passwordItems.concat(arrayUpper);
+  }
+
+  if (confirmNumber === true) {
+    passwordItems = passwordItems.concat(arrayNumber);
   }
 
   var password = "";
