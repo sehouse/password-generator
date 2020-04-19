@@ -11,6 +11,6 @@
 * Scott House's Password Generator GitHub [https://github.com/sehouse/password-generator]
 * Scott House's Password Generator GitHub IO [https://sehouse.github.io/password-generator/]
 
-<img src="/assets/scott-house-password-generator-io.jpg"
+<img src="https://github.com/sehouse/password-generator/blob/master/Assets/scott-house-password-generator-io.jpg?raw=true"
      alt="Scott House Password Generator"
      style="float: center" />
