@@ -31,7 +31,9 @@ function createPassword() {
 
   passwordLength = prompt("How many characters would you like your password to contain? (Password must contain at least 8 characters and no more than 128 characters.)");
 
-  if (passwordLength < 8 || passwordLength > 128) {
+  //A while loop to make sure that the user length input is between 8 and 128 characters
+
+  while (passwordLength < 8 || passwordLength > 128) {
     alert("Your password must contain between 8 and 128 characters. Please try again.")
     passwordLength = prompt("How many characters would you like your password to contain? (Password must contain at least 8 characters and no more than 128 characters.)");
   }
